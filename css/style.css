@@ -1,0 +1,87 @@
+*,
+*::after,
+::before{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ccc;
+  perspective: 500px;
+  height: 100vh;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* border: 2px solid black; */
+  /* background-image: url('https://picsum.photos/306/306'); */
+  transform: translate(-50%, -50%) rotateX(326deg) rotateY(45deg);
+  width: 306px;
+  height: 306px;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  background: #0a0909;
+  /* opacity: 0.3; */
+  color: #fff;
+  font-size: 50px;
+  line-height: 300px;
+  text-align: center;
+  /* border: 2px solid red; */
+  position: absolute;
+  transition: all 1s ease;
+}
+
+.front {
+  transform: translate3d(0,0, 150px);
+}
+
+.container:hover .front {
+  transform: translate3d(0,0,200px);
+}
+
+.back {
+  transform: translate3d(0,0, -150px) rotateY(180deg);
+}
+
+.container:hover .back {
+  transform: translate3d(0,0,-200px) rotateY(180deg);
+}
+
+.left {
+  transform: translate3d(-150px,0, 0) rotateY(-90deg);
+}
+
+.container:hover .left {
+  transform: translate3d(-200px,0,0) rotateY(-90deg);
+}
+
+.right {
+  transform: translate3d(150px,0, 0) rotateY(90deg);
+}
+
+.container:hover .right {
+  transform: translate3d(200px,0,0) rotateY(90deg);
+}
+
+.top {
+  transform: translate3d(0,-150px, 0) rotateX(90deg);
+}
+
+.container:hover .top {
+  transform: translate3d(0,-200px,0) rotateX(90deg);
+}
+
+.bottom {
+  transform: translate3d(0,150px, 0) rotateX(-90deg);
+}
+
+.container:hover .bottom {
+  transform: translate3d(0,200px,0) rotateX(-90deg);
+}
+
